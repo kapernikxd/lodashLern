@@ -129,5 +129,24 @@ resule = _.intersectionWith(obj, filter, (x, y) => x.НоменклатураГ�
 ]
   
 
+////////////////////////////////////
+
+var users = 
+  {
+    "ClientCode": "04386",
+    "Balance": 3210.31,
+    "LimitDeny": -20000,
+    "AvailableFunds": 23210.31
+  }
+;
+
+lowerKeys = _.mapKeys(users, function(value, key) {
+  return _.toLower(key);
+});
+
+result = _.map([lowerKeys], function(element){
+  return _.extend({}, element, {date: '2020-12-02', time: '12:22:22'});
+})
+
   
   
